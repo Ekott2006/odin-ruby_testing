@@ -1,0 +1,25 @@
+before do
+        allow(Dir).to receive(:exist?).and_return(false)
+        allow(Dir).to receive(:mkdir)
+        allow(File).to receive(:open)
+        allow(phrase).to receive(:display_file_location)
+      end
+
+      # ASSIGNMENT #2
+      # Write the following 3 tests:
+
+      it 'sends message to check the existance of the 16_cipher directory' do
+        expect(Dir).to receive(:exist?)
+        phrase.save_decrypted_messages
+      end
+
+      it 'sends message to create a directory' do
+        expect(Dir).to receive(:mkdir)
+        phrase.save_decrypted_messages
+      end
+
+      it 'sends message to create a file' do
+        expect(File).to receive(:open)
+        phrase.save_decrypted_messages
+      end
+    end

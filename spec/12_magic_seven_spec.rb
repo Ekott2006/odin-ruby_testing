@@ -70,34 +70,62 @@ describe MagicSeven do
   # Write a test for each of the following methods:
 
   describe '#subtract_four' do
+    it 'returns 15' do
+      random_number = 19 # Arrange
+      result = game.subtract_four(random_number) # Act
+      expect(result).to eq(15) # Assert
+    end
   end
 
   describe '#divide_by_two' do
+    it 'returns 15' do
+      random_number = 30 # Arrange
+      result = game.divide_by_two(random_number) # Act
+      expect(result).to eq(15) # Assert
+    end
   end
 
   # The following tests will need you to create new instances of MagicSeven with
   # a specific value for the random_number.
   describe '#subtract_random_number' do
+    subject(:game) { described_class.new(15) }
+    it 'returns 15' do
+      random_number = 30 # Arrange
+      result = game.subtract_random_number(random_number) # Act
+      expect(result).to eq(15) # Assert
+    end
   end
 
   # The #play method will always return seven! Test this game, using any
   # integer as the random_number. Update the context with the number.
   describe '#play' do
-    context 'when the random number is ...' do
+    context 'when the random number is 5' do
+      subject(:game) { described_class.new(5) }
+
       # remove the 'x' before running this test
-      xit 'will return 7' do
+      it 'will return 7' do
+        result = game.play
+        expect(result).to eq(7)
       end
     end
 
-    context 'when the random number is ...' do
+    context 'when the random number is 18' do
+      subject(:game) { described_class.new(18) }
+
       # remove the 'x' before running this test
-      xit 'will return 7' do
+      it 'will return 7' do
+        result = game.play
+        expect(result).to eq(7)
       end
     end
 
-    context 'when the random number is ...' do
+    context 'when the random number is 15' do
+      subject(:game) { described_class.new(15) }
+
       # remove the 'x' before running this test
-      xit 'will return 7' do
+      it 'will return 7' do
+        result = game.play
+        expect(result).to eq(7)
       end
     end
   end
